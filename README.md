@@ -20,8 +20,8 @@ with ES2015 module bundlers (like Rollup and Webpack 2).
 
 For using directly in browser (import with `<script>` tag in HTML-file):
 
-* [Development version](https://raw.github.com/m18ru/google-maps-promise/master/umd/google-maps-promise.js)
-* [Production version](https://raw.github.com/m18ru/google-maps-promise/master/umd/google-maps-promise.min.js)
+* [Development version](https://unpkg.com/google-maps-promise/umd/google-maps-promise.js)
+* [Production version](https://unpkg.com/google-maps-promise/umd/google-maps-promise.min.js)
 
 You can use AMD or `GoogleMapsPromise` global variable.
 
