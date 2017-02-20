@@ -1,0 +1,45 @@
+{
+  "name": "google-maps-promise",
+  "version": "1.0.0",
+  "description": "Wrapper for asynchronously load Google Maps API with Promise.",
+  "main": "./umd/google-maps-promise.js",
+  "module": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "dependencies": {
+    "@types/googlemaps": "^3.26.1"
+  },
+  "devDependencies": {
+    "rollup": "^0.41.4",
+    "tslint": "^4.4.2",
+    "typescript": "^2.1.6",
+    "uglify-js": "^2.7.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "tslint \"index.ts\"",
+    "build": "tsc",
+    "build:umd": "npm run build && rollup -c",
+    "minify:umd": "uglifyjs \"./umd/google-maps-promise.js\" -o \"./umd/google-maps-promise.min.js\"",
+    "watch": "npm run build -- --watch",
+    "prepublish": "npm run lint && npm run build:umd && npm run minify:umd"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m18ru/google-maps-promise.git"
+  },
+  "keywords": [
+    "google",
+    "maps",
+    "asynchronous",
+    "browser",
+    "wrapper",
+    "promise",
+    "typescript"
+  ],
+  "author": "Andrey Avol Volynkin <code@m18.ru>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/m18ru/google-maps-promise/issues"
+  },
+  "homepage": "https://github.com/m18ru/google-maps-promise#readme"
+}
