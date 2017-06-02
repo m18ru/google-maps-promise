@@ -9,7 +9,7 @@ const defaultUrlSettings: Readonly<UrlSettings> = {
 	url: 'https://maps.googleapis.com/maps/api/js',
 	key: null,
 	client: null,
-	version: '3.27',
+	version: '3.28',
 	channel: null,
 	libraries: [],
 	language: null,
