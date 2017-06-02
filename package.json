@@ -6,13 +6,13 @@
   "module": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "dependencies": {
-    "@types/googlemaps": "^3.26.1"
+    "@types/googlemaps": "^3.26.12"
   },
   "devDependencies": {
-    "rollup": "^0.41.4",
-    "tslint": "^4.4.2",
-    "typescript": "^2.1.6",
-    "uglify-js": "^2.7.5"
+    "rollup": "^0.41.6",
+    "tslint": "^5.4.2",
+    "typescript": "^2.3.4",
+    "uglify-js": "^3.0.15"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -21,7 +21,7 @@
     "build:umd": "npm run build && rollup -c",
     "minify:umd": "uglifyjs \"./umd/google-maps-promise.js\" -o \"./umd/google-maps-promise.min.js\"",
     "watch": "npm run build -- --watch",
-    "prepublish": "npm run lint && npm run build:umd && npm run minify:umd"
+    "prepublishOnly": "npm run lint && npm run build:umd && npm run minify:umd"
   },
   "repository": {
     "type": "git",
