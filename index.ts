@@ -1,7 +1,4 @@
-/**
- * Wrapper for asynchronously load Google Maps API with Promise.
- */
-;
+// Wrapper for asynchronously load Google Maps API with Promise.
 
 /// <reference types="googlemaps" />
 
@@ -80,6 +77,7 @@ function release(): Promise<void>
 	if ( !loaded )
 	{
 		cleanupEnvironment();
+		
 		return Promise.resolve();
 	}
 	
@@ -95,7 +93,7 @@ function init(): void
 	loaded = false;
 	
 	promise = new Promise<typeof google.maps>(
-		( resolve: typeof resolvePromise, reject: typeof rejectPromise ): void =>
+		( resolve, reject ): void =>
 		{
 			resolvePromise = resolve;
 			rejectPromise = reject;
@@ -114,13 +112,16 @@ function createLoader(): void
 	)
 	{
 		resolvePromise( windowWithAnything.google.maps );
+		
 		return;
 	}
 	
 	const onError = () =>
-		rejectPromise( new URIError(
-			`The script ${scriptElement && scriptElement.src} is not accessible.`,
-		) );
+		rejectPromise(
+			new URIError(
+				`The script ${scriptElement && scriptElement.src} is not accessible.`,
+			),
+		);
 	
 	scriptElement = document.createElement( 'script' );
 	scriptElement.type = 'text/javascript';

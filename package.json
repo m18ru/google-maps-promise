@@ -5,15 +5,6 @@
   "main": "./umd/google-maps-promise.js",
   "module": "./lib/index.js",
   "types": "./lib/index.d.ts",
-  "dependencies": {
-    "@types/googlemaps": "^3.26.12"
-  },
-  "devDependencies": {
-    "rollup": "^0.41.6",
-    "tslint": "^5.4.2",
-    "typescript": "^2.3.4",
-    "uglify-js": "^3.0.15"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "tslint \"index.ts\"",
@@ -41,5 +32,15 @@
   "bugs": {
     "url": "https://github.com/m18ru/google-maps-promise/issues"
   },
-  "homepage": "https://github.com/m18ru/google-maps-promise#readme"
+  "homepage": "https://github.com/m18ru/google-maps-promise#readme",
+  "dependencies": {
+    "@types/googlemaps": "^3.26.12"
+  },
+  "devDependencies": {
+    "rollup": "^0.41.6",
+    "tslint": "^5.4.2",
+    "tslint-config-m18": "^1.2.0",
+    "typescript": "^2.3.4",
+    "uglify-js": "^3.0.15"
+  }
 }
