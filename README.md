@@ -15,18 +15,57 @@ For bundlers and other NPM-based environments:
 npm install --save-dev google-maps-promise
 ```
 
-Types for TypeScript are included. Package contain `module` property for use
-with ES2015 module bundlers (like Rollup and Webpack 2).
+Types for TypeScript are included.
+
+### UMD
+
+UMD is default for this package, so just use something like:
+
+```js
+import {load, urlSettings} from 'google-maps-promise';
+// or
+const {load, urlSettings} = require( 'google-maps-promise' );
+```
 
 For using directly in browser (import with `<script>` tag in HTML-file):
 
-* [Development version](https://unpkg.com/google-maps-promise/umd/google-maps-promise.js)
-* [Production version](https://unpkg.com/google-maps-promise/umd/google-maps-promise.min.js)
+* [Development version](https://unpkg.com/google-maps-promise/es5/index.js)
+* [Production version](https://unpkg.com/google-maps-promise/es5/google-maps-promise.min.js)
 
 You can use AMD or `GoogleMapsPromise` global variable.
 
 If you target to ES5 browsers you should use some polyfill for `Promise`
 and `Object.assign`.
+
+### ES2015 module systems
+
+Package contain `module` property for use with ES2015 module bundlers
+(like Rollup and Webpack 2).
+
+### ES2015 code base
+
+If you don’t want to use transplitted to ES5 code, you can use included
+ES2015 version.
+
+You can directly import this version:
+
+```js
+import {load, urlSettings} from 'google-maps-promise/es2015';
+```
+
+Or specify alias in Webpack config:
+
+```js
+{
+	// …
+	resolve: {
+		extensions: ['.ts', '.tsx', '.js'],
+		alias: {
+			'google-maps-promise': 'google-maps-promise/es2015',
+		},
+	},
+};
+```
 
 ## Usage
 
@@ -212,3 +251,7 @@ release()
 			console.log( 'No google maps api around' );
 	);
 ```
+
+## License
+
+[MIT](https://github.com/m18ru/google-maps-promise/blob/master/LICENSE).
