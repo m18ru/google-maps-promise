@@ -2,7 +2,7 @@
 	"compilerOptions": {
 		"module": "es2015",
 		"moduleResolution": "node",
-		"target": "es5",
+		"target": "es2015",
 		"lib": ["es2015", "dom"],
 		"alwaysStrict": true,
 		"noImplicitAny": true,
@@ -19,11 +19,11 @@
 		"declaration": true,
 		"sourceMap": true,
 		"importHelpers": true,
-		"outDir": "./lib",
-		"rootDir": ".",
-		"baseUrl": "."
+		"outDir": "./es2015",
+		"rootDir": "./src/",
+		"baseUrl": "./src/"
 	},
 	"files": [
-		"index.ts"
+		"./src/index.ts"
 	]
 }

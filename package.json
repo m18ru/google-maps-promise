@@ -2,17 +2,22 @@
   "name": "google-maps-promise",
   "version": "1.0.0",
   "description": "Wrapper for asynchronously load Google Maps API with Promise.",
-  "main": "./umd/google-maps-promise.js",
-  "module": "./lib/index.js",
-  "types": "./lib/index.d.ts",
+  "main": "./es5/index.js",
+  "module": "./es5-esm/index.js",
+  "types": "./es2015/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "tslint \"index.ts\"",
+    "lint:scripts-project": "tslint -c tslint-type-check.json -p tsconfig.json --type-check",
+    "lint:scripts-other": "tslint \"{*.js,src/*.d.ts}\"",
+    "lint": "npm run lint:scripts-project && npm run lint:scripts-other",
+    "clean": "rimraf es2015 es5-esm es5",
     "build": "tsc",
-    "build:umd": "npm run build && rollup -c",
-    "minify:umd": "uglifyjs \"./umd/google-maps-promise.js\" -o \"./umd/google-maps-promise.min.js\"",
+    "build:es5": "tsc --target es5 --outDir ./es5-esm",
+    "build:umd": "rollup -c",
+    "build:all": "npm run build && npm run build:es5 && npm run build:umd",
+    "minify": "uglifyjs \"./es5/index.js\" -c -m -o \"./es5/google-maps-promise.min.js\"",
     "watch": "npm run build -- --watch",
-    "prepublishOnly": "npm run lint && npm run build:umd && npm run minify:umd"
+    "prepublishOnly": "npm run lint && npm run clean && npm run build:all && npm run minify"
   },
   "repository": {
     "type": "git",
@@ -37,6 +42,7 @@
     "@types/googlemaps": "^3.26.12"
   },
   "devDependencies": {
+    "rimraf": "^2.6.1",
     "rollup": "^0.41.6",
     "tslint": "^5.4.2",
     "tslint-config-m18": "^1.2.0",

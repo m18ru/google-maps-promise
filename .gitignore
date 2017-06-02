@@ -37,5 +37,6 @@ jspm_packages
 .node_repl_history
 
 # Build files
-/lib/
-/umd/
+/es5/
+/es5-esm/
+/es2015/

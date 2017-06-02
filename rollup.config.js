@@ -1,6 +1,6 @@
 export default {
-	entry: './lib/index.js',
-	dest: './umd/google-maps-promise.js',
+	entry: './es5-esm/index.js',
+	dest: './es5/index.js',
 	format: 'umd',
-	moduleName: 'GoogleMapsPromise'
+	moduleName: 'GoogleMapsPromise',
 };
