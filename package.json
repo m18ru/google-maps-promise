@@ -1,6 +1,6 @@
 {
   "name": "google-maps-promise",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Wrapper for asynchronously load Google Maps API with Promise.",
   "main": "./es5/index.js",
   "module": "./es5-esm/index.js",
