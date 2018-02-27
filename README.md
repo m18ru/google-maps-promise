@@ -1,3 +1,7 @@
+[![NPM][npm]][npm-url]
+[![Dependencies][deps]][deps-url]
+[![DevDependencies][deps-dev]][deps-dev-url]
+
 # google-maps-promise
 
 Wrapper for asynchronously load Google Maps API with Promise.
@@ -252,6 +256,19 @@ release()
 	);
 ```
 
+## Change Log
+
+[View changelog](CHANGELOG.md).
+
 ## License
 
 [MIT](https://github.com/m18ru/google-maps-promise/blob/master/LICENSE).
+
+[npm]: https://img.shields.io/npm/v/google-maps-promise.svg
+[npm-url]: https://npmjs.com/package/google-maps-promise
+
+[deps]: https://img.shields.io/david/m18ru/google-maps-promise.svg
+[deps-url]: https://david-dm.org/m18ru/google-maps-promise
+
+[deps-dev]: https://img.shields.io/david/dev/m18ru/google-maps-promise.svg
+[deps-dev-url]: https://david-dm.org/m18ru/google-maps-promise?type=dev
